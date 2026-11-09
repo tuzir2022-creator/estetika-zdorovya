@@ -394,19 +394,19 @@
             <h2 class="v-display v-display--md">Утро, день или вечер – запись на любое окно</h2>
           </div>
           <ol class="shift__list">
-            <li class="shift__win" style="--a: .1; --b: .42">
+            <li class="shift__win" style="--a: .1; --b: .44">
               <span class="shift__when"><i aria-hidden="true"></i>Утро</span>
               <b>Массаж головы</b>
               <span class="shift__desc">Салон открывается в 9:00, можно зайти перед работой</span>
               <em class="v-nums">1&nbsp;100&nbsp;₽</em>
             </li>
-            <li class="shift__win" style="--a: .41; --b: .71">
+            <li class="shift__win" style="--a: .43; --b: .75">
               <span class="shift__when"><i aria-hidden="true"></i>День</span>
               <b>Шейно-воротниковая зона</b>
               <span class="shift__desc">Для тех, у кого шея устаёт от работы за столом</span>
               <em class="v-nums">1&nbsp;100&nbsp;₽</em>
             </li>
-            <li class="shift__win" style="--a: .7; --b: 1">
+            <li class="shift__win" style="--a: .74; --b: 1">
               <span class="shift__when"><i aria-hidden="true"></i>Вечер</span>
               <b>Антистрессовый массаж</b>
               <span class="shift__desc">Последние окна – до закрытия в 22:00</span>
@@ -635,7 +635,7 @@
     var last = '', live = false;
     function tick() {
       var p = parseFloat(getComputedStyle(act).getPropertyValue('--v-p')) || 0;
-      var t = hm(open + (close - open) * p), d = p < 0.4 ? 'утро' : p < 0.7 ? 'день' : 'вечер';
+      var t = hm(open + (close - open) * Math.max(0, (p - 0.18) / 0.82)), d = p < 0.43 ? 'утро' : p < 0.75 ? 'день' : 'вечер';
       if (t + d !== last) { last = t + d; out.textContent = t; part.textContent = d; }
       if (live) requestAnimationFrame(tick);
     }
