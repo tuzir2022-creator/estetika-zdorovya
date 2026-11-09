@@ -377,7 +377,7 @@
           <span class="v-nums">09:00–22:00</span>
         </div>
 
-        <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.3 0 0.08">
+        <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.18 0 0.06">
           <span class="v-label hero__label">Массажный салон · Ижевск</span>
           <h1 class="v-display v-display--xl" data-v-kinetic="lines">Массаж в Ижевске: спина, шея, лицо и всё тело</h1>
           <p class="v-lede">По предварительной записи, ежедневно с 9:00 до 22:00. Цена каждого массажа – в прайсе ниже, до записи.</p>
@@ -388,25 +388,25 @@
           <p class="hero__rate"><span class="reviews__stars" style="--r: 4.6" role="img" aria-label="4.6 из 5"></span><b>4,6</b><a href="https://yandex.ru/maps/org/estetika_zdorovya/17933498958/" target="_blank" rel="noopener">10 отзывов на Яндекс.Картах</a></p>
         </div>
 
-        <div class="shift" data-v-cue="0.3 1 0.08 0">
+        <div class="shift" data-v-cue="0.18 1 0.06 0">
           <div>
             <span class="v-label">Сегодня в кабинете</span>
             <h2 class="v-display v-display--md">Утро, день или вечер – запись на любое окно</h2>
           </div>
           <ol class="shift__list">
-            <li class="shift__win" style="--a: 0; --b: .34">
+            <li class="shift__win" style="--a: .1; --b: .42">
               <span class="shift__when"><i aria-hidden="true"></i>Утро</span>
               <b>Массаж головы</b>
               <span class="shift__desc">Салон открывается в 9:00, можно зайти перед работой</span>
               <em class="v-nums">1&nbsp;100&nbsp;₽</em>
             </li>
-            <li class="shift__win" style="--a: .33; --b: .67">
+            <li class="shift__win" style="--a: .41; --b: .71">
               <span class="shift__when"><i aria-hidden="true"></i>День</span>
               <b>Шейно-воротниковая зона</b>
               <span class="shift__desc">Для тех, у кого шея устаёт от работы за столом</span>
               <em class="v-nums">1&nbsp;100&nbsp;₽</em>
             </li>
-            <li class="shift__win" style="--a: .66; --b: 1">
+            <li class="shift__win" style="--a: .7; --b: 1">
               <span class="shift__when"><i aria-hidden="true"></i>Вечер</span>
               <b>Антистрессовый массаж</b>
               <span class="shift__desc">Последние окна – до закрытия в 22:00</span>
@@ -635,7 +635,7 @@
     var last = '', live = false;
     function tick() {
       var p = parseFloat(getComputedStyle(act).getPropertyValue('--v-p')) || 0;
-      var t = hm(open + (close - open) * p), d = p < 0.33 ? 'утро' : p < 0.66 ? 'день' : 'вечер';
+      var t = hm(open + (close - open) * p), d = p < 0.4 ? 'утро' : p < 0.7 ? 'день' : 'вечер';
       if (t + d !== last) { last = t + d; out.textContent = t; part.textContent = d; }
       if (live) requestAnimationFrame(tick);
     }
